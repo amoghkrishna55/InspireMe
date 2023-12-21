@@ -13,7 +13,7 @@ InspireMe is a website that displays inspiring quotes fetched from the Quotables
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/your-username/inspire-me.git
+   git clone https://github.com/amoghkrishna55/InspireMe.git
    ```
 
 2. Install the dependencies:
