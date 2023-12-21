@@ -25,7 +25,7 @@ function App() {
   const [hide, setHide] = useState(true);
 
   async function updateQuote() {
-    const response = await fetch("https://api.quotable.io/random");
+    const response = await fetch("https://api.quotable.io/random?maxLength=80");
     const data = await response.json();
     if (response.ok) {
       setHide(true);
