@@ -5,7 +5,7 @@ InspireMe is a website that displays inspiring quotes fetched from the Quotables
 ## Features
 
 - Fetches quotes from the [Quotables API](https://quotable.io) and displays them on the website.
-- Allows users to refresh the page to get a new random quote.
+- Allows users to get a new random quote.
 - Provides a simple and intuitive user interface.
 
 ## Live Preview
