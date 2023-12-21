@@ -28,7 +28,7 @@ function App() {
   async function updateQuote() {
     try {
       const response = await fetch(
-        "https://api.quotablei.io/random?maxLength=80"
+        "https://api.quotable.io/random?maxLength=80"
       );
       const data = await response.json();
       if (response.ok) {
