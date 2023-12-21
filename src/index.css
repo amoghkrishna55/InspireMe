@@ -44,8 +44,13 @@ h1 {
   line-height: 1.1;
 }
 
-.animate {
-  animation: fadeIn 2s ease-in-out;
+.fade {
+  transition: opacity 0.5s ease-in-out;
+  opacity: 1;
+}
+
+.fade.hide {
+  opacity: 0;
 }
 
 button {

@@ -3,43 +3,37 @@ import "./App.css";
 
 interface QuoteProps {
   title: string;
+  className: string;
 }
 
 function Quote(props: QuoteProps) {
-  return <h1>{props.title}</h1>;
+  return <h1 className={`fade ${props.className}`}>{props.title}</h1>;
 }
 
 interface QuoteAuthorProps {
   title: string;
+  className: string;
 }
 
 function QuoteAuthor(props: QuoteAuthorProps) {
-  return <p>{props.title}</p>;
+  return <p className={`fade ${props.className}`}>{props.title}</p>;
 }
 
 function App() {
   const [content, setContent] = useState("");
   const [author, setAuthor] = useState("");
-  const [trigger, setTrigger] = useState(0);
+  const [hide, setHide] = useState(true);
 
   async function updateQuote() {
     const response = await fetch("https://api.quotable.io/random");
     const data = await response.json();
-    const h1anim = document.querySelector("h1");
-    const panim = document.querySelector("p");
-    const button = document.querySelector("button");
     if (response.ok) {
-      setContent(data.content);
-      setAuthor(data.author);
-      h1anim!.classList.add("animate");
-      panim!.classList.add("animate");
-      button!.classList.add("animate");
-
+      setHide(true);
       setTimeout(() => {
-        h1anim!.classList.remove("animate");
-        panim!.classList.remove("animate");
-        button!.classList.remove("animate");
-      }, 2000);
+        setContent(data.content);
+        setAuthor(data.author);
+        setHide(false);
+      }, 500);
     } else {
       setContent("An error occurred");
       console.log(data);
@@ -48,17 +42,13 @@ function App() {
 
   useEffect(() => {
     updateQuote();
-  }, [trigger]);
+  }, []);
 
   return (
     <>
-      <Quote title={content} />
-      <QuoteAuthor title={author} />
-      <button
-        onClick={() => {
-          setTrigger(trigger + 1);
-        }}
-      >
+      <Quote title={content} className={hide ? "hide" : ""} />
+      <QuoteAuthor title={author} className={hide ? "hide" : ""} />
+      <button onClick={updateQuote} className={`fade ${hide ? "hide" : ""}`}>
         New Quote
       </button>
     </>
