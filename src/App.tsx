@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import "./App.css";
-import Title from "./Title";
 
 interface QuoteProps {
   title: string;
@@ -63,9 +62,10 @@ function App() {
 
   return (
     <>
-      <Title />
       <Quote title={content} className={hide ? "hide" : ""} />
-      <QuoteAuthor title={author} className={hide ? "hide" : ""} />
+      <span>
+        <QuoteAuthor title={author} className={hide ? "hide" : ""} />
+      </span>
       <button onClick={updateQuote} className={`fade ${hide ? "hide" : ""}`}>
         {button ? "Retry" : "New Quote"}
       </button>
