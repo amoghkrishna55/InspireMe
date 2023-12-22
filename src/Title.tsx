@@ -7,6 +7,7 @@ function Title() {
         height: "200px",
         width: "300px",
         display: "static",
+        fontFamily: "Arial, Helvetica, sans-serif",
       }}
       cursor={false}
       className="type"
