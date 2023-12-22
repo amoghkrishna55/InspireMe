@@ -63,7 +63,9 @@ function App() {
   return (
     <>
       <Quote title={content} className={hide ? "hide" : ""} />
-      <QuoteAuthor title={author} className={hide ? "hide" : ""} />
+      <span>
+        <QuoteAuthor title={author} className={hide ? "hide" : ""} />
+      </span>
       <button onClick={updateQuote} className={`fade ${hide ? "hide" : ""}`}>
         {button ? "Retry" : "New Quote"}
       </button>
