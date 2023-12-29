@@ -1,4 +1,4 @@
-# InspireMe (Stopped working on it)
+# InspireMe
 
 InspireMe is a website that displays inspiring quotes fetched from the Quotables API. It is built using React and Vite.
 
